@@ -9,11 +9,13 @@
             Console.WriteLine("--------------------------------------------------------");
             Console.WriteLine("What is your first name?");
             firstName = Console.ReadLine();
-            if ((firstName.Length < 2) || (firstName.Length > 16))
+            if ((firstName.Length < 3) || (firstName.Length > 15))
             {
-                while ((firstName.Length < 2) || (firstName.Length > 16))
+                while ((firstName.Length < 3) || (firstName.Length > 15))
                 {
-                    Console.WriteLine("Invalid, your name must be between 2 and 16 characters long!");
+                    Console.WriteLine("Invalid, your name must be between 3 and 15 characters long!");
+                    Console.WriteLine("What is your first name?");
+                    firstName = Console.ReadLine();
                 }
             }
             Console.WriteLine("What is your last name?");
