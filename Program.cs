@@ -64,6 +64,16 @@
                 Console.WriteLine("[Y] for Yes [N] for No");
                 choiceConfirmation = Console.ReadLine().ToUpper()[0];
             } while (choiceConfirmation == 'N');
+            switch (choiceConfirmation)
+            {
+                case 'Y':
+                    Console.WriteLine("Test");
+                    break;
+                default:
+
+                    break;
+            }
+        }
         static char DisplayDifficultyChoice()
         {
             char difficultyChoice;
