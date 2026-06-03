@@ -5,11 +5,13 @@
         static void Main(string[] args)
         {
             string firstName, lastName;
-            char difficultyChoice, choiceConfirmation;
-            String[] quizQuestions = { "Hello", "Testing" };
+            int quizScore;
+            char difficultyChoice, choiceConfirmation, correctAnswer;
+            String[] quizQuestions = { "Q1) What is the correct maoi greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Testing" };
 
             Console.WriteLine("--------------------------------------------------------");
             Console.WriteLine("What is your first name?");
+
             firstName = Console.ReadLine();
             // This checks the length and if its shorter than 3 characters or longer than 15 characters then it displays a invalid message and repeats the question.
             while ((firstName.Length < 3) || (firstName.Length > 10) || (!firstName.All(char.IsLetter)))
@@ -18,6 +20,7 @@
                     Console.WriteLine("What is your first name?");
                     firstName = Console.ReadLine();
             }
+
             Console.WriteLine("What is your last name?");
             lastName = Console.ReadLine();
             // This checks the length and if its shorter than 3 characters or longer than 15 characters then it displays a invalid message and repeats the question.
@@ -63,6 +66,8 @@
             {
                 case 'E':
                     Console.WriteLine(quizQuestions[0]);
+                    correctAnswer = 'B';
+                    correctAnswer = Convert.ToChar(Console.ReadLine());
                     break;
                 case 'M':
                     Console.WriteLine(quizQuestions[1]);
