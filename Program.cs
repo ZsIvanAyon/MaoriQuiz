@@ -6,6 +6,7 @@
         {
             string firstName, lastName;
             char difficultyChoice, choiceConfirmation;
+            String[] quizQuestions = { "Hello", "Testing" };
 
             Console.WriteLine("--------------------------------------------------------");
             Console.WriteLine("What is your first name?");
@@ -58,13 +59,13 @@
                 Console.WriteLine("[Y] for Yes [N] for No");
                 choiceConfirmation = Console.ReadLine().ToUpper()[0];
             } while (choiceConfirmation == 'N');
-            switch (choiceConfirmation)
+            switch (difficultyChoice)
             {
-                case 'Y':
-                    Console.WriteLine("Test");
+                case 'E':
+                    Console.WriteLine(quizQuestions[0]);
                     break;
-                default:
-
+                case 'M':
+                    Console.WriteLine(quizQuestions[1]);
                     break;
             }
         }
