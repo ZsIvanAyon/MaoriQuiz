@@ -6,8 +6,10 @@
         {
             string firstName, lastName;
             int quizScore;
-            char difficultyChoice, choiceConfirmation, correctAnswer;
-            String[] quizQuestions = { "Q1) What is the correct maoi greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Testing" };
+            char difficultyChoice, choiceConfirmation, questionAnswer;
+            String[] easyQuestions = { "Q1) What is the correct maoi greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Testing" };
+            String[] easyAnswers = { 'B' };
+            String[] mediumQuestions = { };
 
             Console.WriteLine("--------------------------------------------------------");
             Console.WriteLine("What is your first name?");
@@ -65,12 +67,20 @@
             switch (difficultyChoice)
             {
                 case 'E':
-                    Console.WriteLine(quizQuestions[0]);
-                    correctAnswer = 'B';
-                    correctAnswer = Convert.ToChar(Console.ReadLine());
+                    Console.WriteLine(easyQuestions[0]);
+                    questionAnswer = 'B';
+                    questionAnswer = Convert.ToChar(Console.ReadLine());
+                    if (questionAnswer == 'B')
+                    {
+                        Console.WriteLine("Correct Answer!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect answer! The correct one was ");
+                    }
                     break;
                 case 'M':
-                    Console.WriteLine(quizQuestions[1]);
+                    Console.WriteLine(mediumQuestions[1]);
                     break;
             }
         }
