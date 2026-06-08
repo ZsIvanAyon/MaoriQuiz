@@ -8,7 +8,7 @@
             int quizScore;
             char difficultyChoice, choiceConfirmation, questionAnswer;
             String[] easyQuestions = { "Q1) What is the correct maoi greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Testing" };
-            String[] easyAnswers = { 'B' };
+            char[] easyAnswers = { 'B', 'A', 'C'};
             String[] mediumQuestions = { };
 
             Console.WriteLine("--------------------------------------------------------");
@@ -68,7 +68,6 @@
             {
                 case 'E':
                     Console.WriteLine(easyQuestions[0]);
-                    questionAnswer = 'B';
                     questionAnswer = Convert.ToChar(Console.ReadLine());
                     if (questionAnswer == 'B')
                     {
@@ -76,7 +75,7 @@
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect answer! The correct one was ");
+                        Console.WriteLine($"Incorrect answer! The correct answer was {easyAnswers[0]}");
                     }
                     break;
                 case 'M':
