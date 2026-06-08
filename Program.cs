@@ -92,5 +92,22 @@
             difficultyChoice = Console.ReadLine().ToUpper()[0];
             return difficultyChoice;
         }
+
+        static int DisplayQuestions(String[] Questions)
+        {
+            char[] easyAnswers = { 'B', 'A', 'C' };
+            int totalScore = 0;
+            char answer;
+            for (int i = 0; i < Questions.Length; i++)
+            {
+                Console.WriteLine(Questions[i]);
+                answer = Console.ReadLine().ToUpper()[0];
+                if (answer == easyAnswers[i])
+                {
+                    Console.WriteLine("Test");
+                }
+                return Questions;
+            }
+        }
     }
 }
