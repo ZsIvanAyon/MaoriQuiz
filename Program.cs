@@ -5,11 +5,11 @@
         static void Main(string[] args)
         {
             string firstName, lastName;
-            int quizScore;
-            char difficultyChoice, choiceConfirmation, questionAnswer;
-            String[] easyQuestions = { "Q1) What is the correct maoi greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Testing" };
-            char[] easyAnswers = { 'B', 'A', 'C'};
+            char difficultyChoice, choiceConfirmation;
+            String[] easyQuestions = { $"Q1) What is the correct Maori greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Q2) What does 'Whanau' mean in english? \n A) Family B) Food C) Respect D) Name" };
+            char[] easyAnswers = { 'B', 'A', 'C' };
             String[] mediumQuestions = { };
+            char[] mediumAnswers = { };
 
             Console.WriteLine("--------------------------------------------------------");
             Console.WriteLine("What is your first name?");
@@ -18,9 +18,9 @@
             // This checks the length and if its shorter than 3 characters or longer than 15 characters then it displays a invalid message and repeats the question.
             while ((firstName.Length < 3) || (firstName.Length > 10) || (!firstName.All(char.IsLetter)))
             {
-                    Console.WriteLine("Invalid, your name must be between 3 and 15 characters long!");
-                    Console.WriteLine("What is your first name?");
-                    firstName = Console.ReadLine();
+                Console.WriteLine("Invalid, your name must be between 3 and 10 characters long!");
+                Console.WriteLine("What is your first name?");
+                firstName = Console.ReadLine();
             }
 
             Console.WriteLine("What is your last name?");
@@ -28,9 +28,9 @@
             // This checks the length and if its shorter than 3 characters or longer than 15 characters then it displays a invalid message and repeats the question.
             while ((lastName.Length < 3) || (lastName.Length > 10) || (!lastName.All(char.IsLetter)))
             {
-                    Console.WriteLine("Invalid, your name must be between 3 and 15 characters long!");
-                    Console.WriteLine("What is your first name?");
-                    lastName = Console.ReadLine();
+                Console.WriteLine("Invalid, your name must be between 3 and 10 characters long!");
+                Console.WriteLine("What is your last name?");
+                lastName = Console.ReadLine();
             }
             Console.WriteLine("--------------------------------------------------------");
             // Displays the welcome message which shows their first name and last name.
@@ -67,19 +67,10 @@
             switch (difficultyChoice)
             {
                 case 'E':
-                    Console.WriteLine(easyQuestions[0]);
-                    questionAnswer = Convert.ToChar(Console.ReadLine());
-                    if (questionAnswer == 'B')
-                    {
-                        Console.WriteLine("Correct Answer!");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Incorrect answer! The correct answer was {easyAnswers[0]}");
-                    }
+                    DisplayQuestions(easyQuestions, easyAnswers);
                     break;
                 case 'M':
-                    Console.WriteLine(mediumQuestions[1]);
+                    DisplayQuestions(mediumQuestions, mediumAnswers);
                     break;
             }
         }
@@ -93,21 +84,26 @@
             return difficultyChoice;
         }
 
-        static int DisplayQuestions(String[] Questions)
+        static int DisplayQuestions(String[] quizQuestions, char[] quizAnswers)
         {
-            char[] easyAnswers = { 'B', 'A', 'C' };
             int totalScore = 0;
             char answer;
-            for (int i = 0; i < Questions.Length; i++)
+            for (int i = 0; i < quizQuestions.Length; i++)
             {
-                Console.WriteLine(Questions[i]);
+                Console.WriteLine(quizQuestions[i]);
                 answer = Console.ReadLine().ToUpper()[0];
-                if (answer == easyAnswers[i])
+                if (answer == quizAnswers[i])
                 {
-                    Console.WriteLine("Test");
+                    totalScore++;
+                    Console.WriteLine("Correct Answer!");
                 }
-                return Questions;
+                else
+                {
+                    Console.WriteLine($"Incorrect answer! The correct answer was {quizAnswers[i]}");
+                }
+                Console.WriteLine($"Your total score is: {totalScore} out of 5");
             }
+            return totalScore;
         }
     }
 }
