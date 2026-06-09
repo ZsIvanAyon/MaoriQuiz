@@ -6,7 +6,7 @@
         {
             string firstName, lastName;
             char difficultyChoice, choiceConfirmation;
-            String[] easyQuestions = { $"Q1) What is the correct Maori greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Q2) What does 'Whanau' mean in english? \n A) Family B) Food C) Respect D) Name" };
+            String[] easyQuestions = { $"Q1) What is the correct Maori greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Q2) What does 'Whanau' mean in english? \n A) Family B) Food C) Respect D) Name", "Q3) What does 'Kai' mean in english? \n A) B) C) Food D)" };
             char[] easyAnswers = { 'B', 'A', 'C' };
             String[] mediumQuestions = { };
             char[] mediumAnswers = { };
