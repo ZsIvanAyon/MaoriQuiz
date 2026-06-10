@@ -109,5 +109,19 @@
             Console.WriteLine($"Your total score is: {totalScore} out of 5");
             return totalScore;
         }
+        static string DisplayAskName(String nameType)
+        {
+            string name;
+
+            Console.WriteLine($"What is your {nameType} name? ");
+            name = Console.ReadLine();
+            while ((name.Length < 3) || (name.Length > 10) || (!name.All(char.IsLetter)))
+            {
+                Console.WriteLine("Invalid, your name must be between 3 and 10 characters long!");
+                Console.WriteLine("What is your first name?");
+                name = Console.ReadLine();
+            }
+            return name;
+        }
     }
 }
