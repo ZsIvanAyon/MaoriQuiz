@@ -5,13 +5,13 @@
         static void Main(string[] args)
         {
             string firstName, lastName;
-            char difficultyChoice, choiceConfirmation;
+            char difficultyChoice, choiceConfirmation, replayChoice;
 
             // Questions and the Answers for it
-            String[] easyQuestions = {"Q1) What is the correct Maori greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Q2) What does 'Whanau' mean in english? \n A) Family B) Food C) Respect D) Name", "Q3) What does 'Kai' mean in english? \n A) Ocean B) Person C) Food D) House", "Q4) What is does 'Aotearoa' mean in english? \n A) North Island B) New Zealand C) South Island D) Country", "Q5) What does 'Love' mean in Maori? \n A) Matariki B) Moana C) Marae D) Aroha"};
+            String[] easyQuestions = { "Q1) What is the correct Maori greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Q2) What does 'Whanau' mean in english? \n A) Family B) Food C) Respect D) Name", "Q3) What does 'Kai' mean in english? \n A) Ocean B) Person C) Food D) House", "Q4) What is does 'Aotearoa' mean in english? \n A) North Island B) New Zealand C) South Island D) Country", "Q5) What does 'Love' mean in Maori? \n A) Matariki B) Moana C) Marae D) Aroha" };
             char[] easyAnswers = { 'B', 'A', 'C', 'B', 'D' };
-            String[] mediumQuestions = {"Q1) What does 'Iwi' mean in english? \n A) Tribe B) Children C) Ocean D) Forest", "Q2) What is a Waka? A) Canoe B) C) D)" };
-            char[] mediumAnswers = { 'A',  };
+            String[] mediumQuestions = { "Q1) What does 'Iwi' mean in english? \n A) Tribe B) Children C) Ocean D) Forest", "Q2) What is a Waka? \n A) Canoe B) Money C) Belonging D) Tree", "Q3) What is a Haka? \n A) Traditional Song B) Traditional Weapon C) Cultural Jade D) Traditional Dance" };
+            char[] mediumAnswers = { 'A', 'A', 'D' };
 
             Console.WriteLine("--------------------------------------------------------");
             firstName = DisplayAskName("first");
@@ -23,40 +23,52 @@
             // Displays the difficulty choosing and returns it back if they say no to the confirmation part.
             do
             {
-                difficultyChoice = DisplayDifficultyChoice();
+                do
+                {
+                    difficultyChoice = DisplayDifficultyChoice();
+                    switch (difficultyChoice)
+                    {
+                        case 'E':
+                            {
+                                Console.WriteLine("Are you sure you want to pick Easy?");
+                            }
+                            break;
+                        case 'M':
+                            {
+                                Console.WriteLine("Are you sure you want to pick Medium?");
+                            }
+                            break;
+                        case 'H':
+                            {
+                                Console.WriteLine("Are you sure you want to pick Hard?");
+                            }
+                            break;
+                        default:
+
+                            break;
+                    }
+                    Console.WriteLine("[Y] for Yes [N] for No");
+                    choiceConfirmation = Console.ReadLine().ToUpper()[0];
+                } while (choiceConfirmation == 'N');
                 switch (difficultyChoice)
                 {
                     case 'E':
                         {
-                            Console.WriteLine("Are you sure you want to pick Easy?");
+                            DisplayQuestions(easyQuestions, easyAnswers);
                         }
                         break;
                     case 'M':
                         {
-                            Console.WriteLine("Are you sure you want to pick Medium?");
+                            DisplayQuestions(mediumQuestions, mediumAnswers);
                         }
-                        break;
-                    case 'H':
-                        {
-                            Console.WriteLine("Are you sure you want to pick Hard?");
-                        }
-                        break;
-                    default:
-
                         break;
                 }
-                Console.WriteLine("[Y] for Yes [N] for No");
-                choiceConfirmation = Console.ReadLine().ToUpper()[0];
-            } while (choiceConfirmation == 'N');
-            switch (difficultyChoice)
-            {
-                case 'E':
-                    DisplayQuestions(easyQuestions, easyAnswers);
-                    break;
-                case 'M':
-                    DisplayQuestions(mediumQuestions, mediumAnswers);
-                    break;
-            }
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine("Congrats on finishing the test! Do you want to play again? ([Y] for Yes [N] for No)");
+                replayChoice = Console.ReadLine().ToUpper()[0];
+                Console.WriteLine("--------------------------------------------------------");
+            } while (replayChoice == 'Y');
+            
         }
         // This is a method that displays the difficulty choice 
         static char DisplayDifficultyChoice()
