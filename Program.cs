@@ -79,7 +79,7 @@
             difficultyChoice = Console.ReadLine().ToUpper()[0];
             return difficultyChoice;
         }
-
+        // This method displays the quesions
         static int DisplayQuestions(String[] quizQuestions, char[] quizAnswers)
         {
             int totalScore = 0;
@@ -102,6 +102,7 @@
             Console.WriteLine($"Your total score is: {totalScore} out of 5");
             return totalScore;
         }
+        // This method asks the user for their name and if I didnt use a method then I wouldve had to copy and paste the code twice which is messy and unorganised
         static string DisplayAskName(String nameType)
         {
             string name;
