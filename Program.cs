@@ -20,7 +20,7 @@
             // Displays the welcome message which shows their first name and last name.
             Console.WriteLine($"Hello {firstName} {lastName}, welcome to the MaoriQuiz!");
             Console.WriteLine("--------------------------------------------------------");
-            // Displays the difficulty choosing and returns it back if they say no to the confirmation part.
+            // Displays the difficulty choosing and returns it back if they say no to the confirmation part
             do
             {
                 do
@@ -44,7 +44,9 @@
                             }
                             break;
                         default:
+                            {
 
+                            }
                             break;
                     }
                     Console.WriteLine("[Y] for Yes [N] for No");
@@ -79,7 +81,7 @@
             difficultyChoice = Console.ReadLine().ToUpper()[0];
             return difficultyChoice;
         }
-        // This method displays the quesions
+        // This method displays the quesions and how it works is that 
         static int DisplayQuestions(String[] quizQuestions, char[] quizAnswers)
         {
             int totalScore = 0;
@@ -102,7 +104,7 @@
             Console.WriteLine($"Your total score is: {totalScore} out of 5");
             return totalScore;
         }
-        // This method asks the user for their name and if I didnt use a method then I wouldve had to copy and paste the code twice which is messy and unorganised
+        // This method asks the user for their name and if I didnt use a method then I wouldve had to copy and paste the code twice which is messy and unorganised. It also checks if the name is below than 3 and above 10 and if it doesn't meet any of those then they have to retry.
         static string DisplayAskName(String nameType)
         {
             string name;
