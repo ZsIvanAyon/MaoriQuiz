@@ -10,8 +10,8 @@
             // Arrays for all the questions and answers such as easy question and answer
             String[] easyQuestions = { "Q1) What is the correct Maori greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Q2) What does 'Whanau' mean in english? \n A) Family B) Food C) Respect D) Name", "Q3) What does 'Kai' mean in english? \n A) Ocean B) Person C) Food D) House", "Q4) What is does 'Aotearoa' mean in english? \n A) North Island B) New Zealand C) South Island D) Country", "Q5) What does 'Love' mean in Maori? \n A) Matariki B) Moana C) Marae D) Aroha" };
             char[] easyAnswers = { 'B', 'A', 'C', 'B', 'D' };
-            String[] mediumQuestions = { "Q1) What does 'Iwi' mean in english? \n A) Tribe B) Children C) Ocean D) Forest", "Q2) What is a Waka? \n A) Canoe B) Money C) Belonging D) Tree", "Q3) What is a Haka? \n A) Traditional Song B) Traditional Weapon C) Cultural Jade D) Traditional Dance" };
-            char[] mediumAnswers = { 'A', 'A', 'D' };
+            String[] mediumQuestions = { "Q1) What does 'Iwi' mean in english? \n A) Tribe B) Children C) Ocean D) Forest", "Q2) What is a Waka? \n A) Canoe B) Money C) Belonging D) Tree", "Q3) What is a Haka? \n A) Traditional Song B) Traditional Weapon C) Cultural Jade D) Traditional Dance", "Q4) What is the most liked food in New Zealand? \n A) Sushi B) Pizza C) Pies D) Steak"};
+            char[] mediumAnswers = { 'A', 'A', 'D', 'C' };
 
             Console.WriteLine("--------------------------------------------------------");
             firstName = DisplayAskName("first");
@@ -81,7 +81,7 @@
             difficultyChoice = Console.ReadLine().ToUpper()[0];
             return difficultyChoice;
         }
-        // This method displays the quesions and how it works is that 
+        // This method displays the quesions and how it works is that each time a question is answered the integer i adds up by 1.
         static int DisplayQuestions(String[] quizQuestions, char[] quizAnswers)
         {
             int totalScore = 0;
