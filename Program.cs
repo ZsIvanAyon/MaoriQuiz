@@ -10,8 +10,10 @@
             // Arrays for all the questions and answers such as easy question and answer
             String[] easyQuestions = { "Q1) What is the correct Maori greeting? \n A) Kia Ore B) Kia Ora C) Bula Vinaka D) Kamusta", "Q2) What does 'Whanau' mean in english? \n A) Family B) Food C) Respect D) Name", "Q3) What does 'Kai' mean in english? \n A) Ocean B) Person C) Food D) House", "Q4) What is does 'Aotearoa' mean in english? \n A) North Island B) New Zealand C) South Island D) Country", "Q5) What does 'Love' mean in Maori? \n A) Matariki B) Moana C) Marae D) Aroha" };
             char[] easyAnswers = { 'B', 'A', 'C', 'B', 'D' };
-            String[] mediumQuestions = { "Q1) What does 'Iwi' mean in english? \n A) Tribe B) Children C) Ocean D) Forest", "Q2) What is a Waka? \n A) Canoe B) Money C) Belonging D) Tree", "Q3) What is a Haka? \n A) Traditional Song B) Traditional Weapon C) Cultural Jade D) Traditional Dance", "Q4) What is the most liked food in New Zealand? \n A) Sushi B) Pizza C) Pies D) Steak", "Q5) W"};
-            char[] mediumAnswers = { 'A', 'A', 'D', 'C'};
+            String[] mediumQuestions = { "Q1) What does 'Iwi' mean in english? \n A) Tribe B) Children C) Ocean D) Forest", "Q2) What is a Waka? \n A) Canoe B) Money C) Belonging D) Tree", "Q3) What is a Haka? \n A) Traditional Song B) Traditional Weapon C) Cultural Jade D) Traditional Dance", "Q4) What is the most liked food in New Zealand? \n A) Sushi B) Pizza C) Pies D) Steak", "Q5) What does 'Ka Pai' mean? \n A) Good one B) Good job C) Nice job D) Nice one"};
+            char[] mediumAnswers = { 'A', 'A', 'D', 'C', 'B'};
+            String[] hardQuestions = { "Q1) When was the treaty of Waitangi signed? \n A) Feb 6 1840 B) Feb 6 1940 C) Feb 7 1840 D) Feb 7 1940", "Q2) What does the red poppy symbolise? \n A) Love B) War C) Tribe D) Dinner", "Q3) When was Aotearoa discovered? \n A) Between 1250 and 1300 CE, B) Between 1300 and 1450 CE C) 1200 D) 1150", "Q4) How much people are living in NZ in 2026? \n A) 3 million B) Approximately 5.36M C) 4 million D) Approximately 7.23M", "Q5) What number is used to call for emergencies? \n A) 911 B) 711 C) 514 D) 111" };
+            char[] hardAnswers = { 'A', 'B', 'A', 'B', 'D' };
 
             Console.WriteLine("--------------------------------------------------------");
             firstName = DisplayAskName("first");
@@ -49,7 +51,7 @@
                                 difficultyChoice = DisplayDifficultyChoice();
                             }
                             break;
-                    }
+                    } 
                     Console.WriteLine("[Y] for Yes [N] for No");
                     choiceConfirmation = Console.ReadLine().ToUpper()[0];
                 } while (choiceConfirmation == 'N');
