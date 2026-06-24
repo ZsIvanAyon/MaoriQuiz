@@ -28,6 +28,11 @@
                 do
                 {
                     difficultyChoice = DisplayDifficultyChoice();
+                    while (difficultyChoice != 'E' && difficultyChoice != 'M' && difficultyChoice != 'H')
+                    {
+                        Console.WriteLine("Invalid character, you must pick between the three difficulty choices!");
+                        difficultyChoice = DisplayDifficultyChoice();
+                    }
                     switch (difficultyChoice)
                     {
                         case 'E':
@@ -47,8 +52,7 @@
                             break;
                         default:
                             {
-                                Console.WriteLine("Invalid character, you must pick between the three difficulty choices!");
-                                difficultyChoice = DisplayDifficultyChoice();
+
                             }
                             break;
                     } 
