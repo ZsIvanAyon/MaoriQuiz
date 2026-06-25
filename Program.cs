@@ -52,12 +52,17 @@
                             break;
                         default:
                             {
-
                             }
                             break;
                     } 
                     Console.WriteLine("[Y] for Yes [N] for No");
                     choiceConfirmation = Console.ReadLine().ToUpper()[0];
+                    while (choiceConfirmation != 'Y' && choiceConfirmation != 'N')
+                    {
+                        Console.WriteLine("Invalid character, you must pick between Y or N!");
+                        Console.WriteLine("[Y] for Yes [N] for No");
+                        choiceConfirmation = Console.ReadLine().ToUpper()[0];
+                    }
                 } while (choiceConfirmation == 'N');
                 switch (difficultyChoice)
                 {
@@ -71,10 +76,22 @@
                             DisplayQuestions(mediumQuestions, mediumAnswers);
                         }
                         break;
+                    case 'H':
+                        {
+                            DisplayQuestions(hardQuestions, hardAnswers);
+                        }
+                        break;
                 }
+
                 Console.WriteLine("--------------------------------------------------------");
                 Console.WriteLine("Congrats on finishing the test! Do you want to play again? ([Y] for Yes [N] for No)");
                 replayChoice = Console.ReadLine().ToUpper()[0];
+                while (replayChoice != 'Y' && replayChoice != 'N')
+                {
+                    Console.WriteLine("Invalid character, you must pick between Y or N!");
+                    Console.WriteLine("[Y] for Yes [N] for No");
+                    replayChoice = Console.ReadLine().ToUpper()[0];
+                }
                 Console.WriteLine("--------------------------------------------------------");
             } while (replayChoice == 'Y');
             
