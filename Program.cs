@@ -89,7 +89,7 @@
                 while (replayChoice != 'Y' && replayChoice != 'N')
                 {
                     Console.WriteLine("Invalid character, you must pick between Y or N!");
-                    Console.WriteLine("[Y] for Yes [N] for No");
+                    Console.WriteLine("Do you want to play again? ([Y] for Yes [N] for No)");
                     replayChoice = Console.ReadLine().ToUpper()[0];
                 }
                 Console.WriteLine("--------------------------------------------------------");
