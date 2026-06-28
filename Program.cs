@@ -115,6 +115,12 @@
             {
                 Console.WriteLine(quizQuestions[i]);
                 answer = Console.ReadLine().ToUpper()[0];
+                while (answer != 'A' && answer != 'B' && answer != 'C' && answer != 'D')
+                {
+                    Console.WriteLine("Invalid character, you must pick between A, B, C, or D");
+                    Console.WriteLine(quizQuestions[i]);
+                    answer = Console.ReadLine().ToUpper()[0];
+                }
                 if (answer == quizAnswers[i])
                 {
                     totalScore++;
